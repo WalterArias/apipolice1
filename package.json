@@ -4,7 +4,7 @@
   "description": "api para consulta de antecedentes interespaciales",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "npm start"
   },
   "keywords": [
     "policia",
