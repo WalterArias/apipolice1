@@ -23,7 +23,7 @@ const upload = multer({ storage: almacenamiento });
 //Consultar
 people.get("/people/listing", (req, res) => {
   // let sql1 = "SELECT COUNT(*) from people";
-  let sql2 = "SELECT * from PEOPLE ORDER BY id LIMIT 7";
+  let sql2 = "SELECT * from people";
   cnx.query(sql2, (error, data) => {
     if (!error) {
       res.status(200).send(data);
@@ -46,7 +46,7 @@ people.get("/people/paginate/:page", (req, res) => {
     page = 0;
   }
 
-  let sql = "SELECT * from PEOPLE ORDER BY id LIMIT 10 OFFSET " + page;
+  let sql = "SELECT * from people ORDER BY id LIMIT 10 OFFSET " + page;
   cnx.query(sql, (error, data) => {
     if (!error) {
       res.status(200).send(data);
