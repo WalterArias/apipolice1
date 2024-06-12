@@ -1,0 +1,7 @@
+{
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 12,
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 120,
+  "editor.fontLigatures": true
+}
