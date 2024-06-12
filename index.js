@@ -7,7 +7,8 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = 3000;
+require('dotenv').config()
+
 
 var corsOptions = {
   origin: "http://127.0.0.1:5500",
@@ -19,9 +20,11 @@ app.use("/images", express.static("uploads/avatars/"));  //ruta estatica
 
 //rutas de la app
 //microservicio people
-app.use("/", require("./modules/people"));
-app.use("/", require("./modules/users"));
-app.use("/", require("./modules/history"));
+app.use("/", require("./src/people"));
+app.use("/", require("./src/users"));
+app.use("/", require("./src/history"));
+
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log(`app on in port: ${port}`);
